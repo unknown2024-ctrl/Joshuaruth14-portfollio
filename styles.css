@@ -1,0 +1,265 @@
+:root {
+  color-scheme: light;
+  --ink: #0f172a;
+  --slate: #1f2937;
+  --subtle: #64748b;
+  --accent: #f97316;
+  --accent-dark: #c2410c;
+  --surface: #fff7ed;
+  --surface-alt: #ffffff;
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background: var(--surface);
+  color: var(--ink);
+  min-height: 100vh;
+  position: relative;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  filter: blur(120px);
+  opacity: 0.6;
+  border-radius: 50%;
+}
+
+.glow-a {
+  background: #fdba74;
+  top: -120px;
+  left: -80px;
+}
+
+.glow-b {
+  background: #fed7aa;
+  bottom: -160px;
+  right: -120px;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px clamp(20px, 6vw, 80px);
+}
+
+.logo {
+  font-family: "Unbounded", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 18px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--slate);
+  font-weight: 600;
+}
+
+main {
+  padding: 0 clamp(20px, 6vw, 80px) 80px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  align-items: center;
+  padding: 24px 0 48px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 12px;
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Unbounded", sans-serif;
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 54px);
+}
+
+.lead {
+  font-size: 18px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0 28px;
+  flex-wrap: wrap;
+}
+
+.primary {
+  background: var(--accent);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.primary:hover {
+  background: var(--accent-dark);
+}
+
+.ghost {
+  border: 1px solid var(--border);
+  color: var(--slate);
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.stat-number {
+  font-weight: 700;
+  font-size: 18px;
+  display: block;
+}
+
+.stat-label {
+  color: var(--subtle);
+  font-size: 14px;
+}
+
+.hero-card {
+  background: var(--surface-alt);
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card ul {
+  padding-left: 18px;
+  margin: 16px 0 0;
+  color: var(--slate);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--subtle);
+}
+
+.chip {
+  background: #fde68a;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 52px 0;
+}
+
+.section-title {
+  margin-bottom: 28px;
+}
+
+.section-title p {
+  color: var(--subtle);
+  margin: 0;
+}
+
+.about-grid,
+.card-grid,
+.work-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.panel,
+.service-card,
+.work-card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+}
+
+.panel p,
+.service-card p,
+.work-card p {
+  color: var(--slate);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact {
+  padding-bottom: 80px;
+}
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.site-footer {
+  padding: 28px clamp(20px, 6vw, 80px);
+  border-top: 1px solid var(--border);
+  color: var(--subtle);
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
